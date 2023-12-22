@@ -6,17 +6,17 @@ git clone https://github.com/herlesupreeth/docker_open5gs
 cd docker_open5gs/base
 docker build --no-cache --force-rm -t docker_open5gs .
 ```
-## Build docker images for kamailio IMS components
+#### Build docker images for kamailio IMS components
 ```
 cd ../ims_base
 docker build --no-cache --force-rm -t docker_kamailio .
 ```
-## Build docker images for UERANSIM (gNB + UE)
+#### Build docker images for UERANSIM (gNB + UE)
 ```
 cd ../ueransim
 docker build --no-cache --force-rm -t docker_ueransim .
 ```
-## Build docker images for additional components
+#### Build docker images for additional components
 ```
 cd ..
 set -a
@@ -26,11 +26,11 @@ sudo sysctl -w net.ipv4.ip_forward=1
 sudo cpupower frequency-set -g performance
 ```
 
-# For 5G deployment using open5gs and ueransim docker based
+#### For 5G deployment using open5gs and ueransim docker based
 '''
 docker compose -f sa-vonr-deploy.yaml build
 '''
-## 5G Core Network
+#### 5G Core Network
 ```
 docker compose -f sa-vonr-deploy.yaml up
 ```
@@ -40,11 +40,11 @@ Username : admin
 Password : 1423
 ```
 Make sure the imsi,mcc,mnc,key,op,optype details in webui is same as in ueransim ue.yaml file and hss config.yaml file
-## UERANSIM gNB 
+#### UERANSIM gNB 
 ```
 docker compose -f nr-gnb.yaml up -d && docker container attach nr_gnb
 ```
-## UERANSIM NR-UE 
+#### UERANSIM NR-UE 
 ```
 docker compose -f nr-ue.yaml up -d && docker container attach nr_ue
 ```
