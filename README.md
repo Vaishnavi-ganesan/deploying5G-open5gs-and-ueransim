@@ -1,0 +1,1 @@
+# deploying5G-open5gs-and-ueransim
