@@ -26,11 +26,10 @@ sudo sysctl -w net.ipv4.ip_forward=1
 sudo cpupower frequency-set -g performance
 ```
 
-# For 5G deployment only
+# For 5G deployment using open5gs and ueransim docker based
 '''
 docker compose -f sa-vonr-deploy.yaml build
 '''
-## 5G SA deployment
 ## 5G Core Network
 ```
 docker compose -f sa-vonr-deploy.yaml up
@@ -40,6 +39,7 @@ Open (http://<DOCKER_HOST_IP>:3000) in a web browser, where <DOCKER_HOST_IP> is 
 Username : admin
 Password : 1423
 ```
+Make sure the imsi,mcc,mnc,key,op,optype details in webui is same as in ueransim ue.yaml file and hss config.yaml file
 ## UERANSIM gNB 
 ```
 docker compose -f nr-gnb.yaml up -d && docker container attach nr_gnb
