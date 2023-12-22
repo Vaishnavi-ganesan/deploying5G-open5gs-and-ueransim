@@ -1,6 +1,6 @@
 ## Deploying5G-open5gs-and-ueransim
 Clone repository and build base docker image of open5gs, kamailio, ueransim
-## Build docker images for open5gs EPC/5GC components
+#### Build docker images for open5gs EPC/5GC components
 ```
 git clone https://github.com/herlesupreeth/docker_open5gs
 cd docker_open5gs/base
